@@ -1,0 +1,2197 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY units "http://purl.oclc.org/NET/ssnx/qu/qu#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY gfo "http://www.onto-med.de/ontologies/gfo.owl#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY sci "http://purl.org/scimantica/owl/science.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#"
+     xml:base="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:gfo="http://www.onto-med.de/ontologies/gfo.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:sci="http://purl.org/scimantica/owl/science.owl#"
+     xmlns:units="http://purl.oclc.org/NET/ssnx/qu/qu#">
+    <owl:Ontology rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl">
+        <owl:versionInfo rdf:datatype="&xsd;string">2.0</owl:versionInfo>
+        <dc:rights xml:lang="en">This ontology is licenced under a Creative Commons Attribution 3.0 licence.
+The ontology is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</dc:rights>
+        <owl:imports rdf:resource="http://purl.org/scimantica/owl/science.owl"/>
+        <owl:imports rdf:resource="http://www.onto-med.de/ontologies/gfo.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&owl;versionInfo"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#chebixref">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#dbxref"/>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#dbxref"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#definition">
+        <definition xml:lang="en">A conceptual structure, predicated of gfo:Individuals.</definition>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="&rdfs;label"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#synonym"/>
+    <owl:AnnotationProperty rdf:about="&rdfs;comment"/>
+    <owl:AnnotationProperty rdf:about="&dc;rights"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#anySimpleType -->
+
+    <rdfs:Datatype rdf:about="&xsd;anySimpleType"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#has_component -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#has_component">
+        <rdfs:subPropertyOf rdf:resource="&gfo;has_proper_part"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#has_determinate_part -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#has_determinate_part">
+        <rdfs:subPropertyOf rdf:resource="&gfo;has_proper_part"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#has_granular_part -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#has_granular_part">
+        <rdfs:subPropertyOf rdf:resource="&gfo;has_proper_part"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#satisfies -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#satisfies">
+        <owl:inverseOf rdf:resource="&sci;predicated_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/scimantica/owl/science.owl#about -->
+
+    <owl:ObjectProperty rdf:about="&sci;about">
+        <owl:inverseOf rdf:resource="&sci;is_described_by"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/scimantica/owl/science.owl#has_identifier -->
+
+    <owl:ObjectProperty rdf:about="&sci;has_identifier"/>
+    
+
+
+    <!-- http://purl.org/scimantica/owl/science.owl#has_property -->
+
+    <owl:ObjectProperty rdf:about="&sci;has_property"/>
+    
+
+
+    <!-- http://purl.org/scimantica/owl/science.owl#has_role -->
+
+    <owl:ObjectProperty rdf:about="&sci;has_role">
+        <owl:inverseOf rdf:resource="&gfo;role_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/scimantica/owl/science.owl#is_described_by -->
+
+    <owl:ObjectProperty rdf:about="&sci;is_described_by"/>
+    
+
+
+    <!-- http://purl.org/scimantica/owl/science.owl#played_by -->
+
+    <owl:ObjectProperty rdf:about="&sci;played_by">
+        <owl:inverseOf rdf:resource="&gfo;plays_role"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/scimantica/owl/science.owl#predicated_of -->
+
+    <owl:ObjectProperty rdf:about="&sci;predicated_of"/>
+    
+
+
+    <!-- http://purl.org/scimantica/owl/science.owl#property_of -->
+
+    <owl:ObjectProperty rdf:about="&sci;property_of">
+        <owl:inverseOf rdf:resource="&sci;has_property"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.onto-med.de/ontologies/gfo.owl#part_of -->
+
+    <owl:ObjectProperty rdf:about="&gfo;part_of"/>
+    
+
+
+    <!-- http://www.onto-med.de/ontologies/gfo.owl#participates_in -->
+
+    <owl:ObjectProperty rdf:about="&gfo;participates_in"/>
+    
+
+
+    <!-- http://www.onto-med.de/ontologies/gfo.owl#plays_role -->
+
+    <rdf:Description rdf:about="&gfo;plays_role"/>
+    
+
+
+    <!-- http://www.onto-med.de/ontologies/gfo.owl#role_of -->
+
+    <owl:ObjectProperty rdf:about="&gfo;role_of"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#valueLiteralOf -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#valueLiteralOf"/>
+    
+
+
+    <!-- http://purl.org/scimantica/owl/science.owl#has_Value_Literal -->
+
+    <owl:DatatypeProperty rdf:about="&sci;has_Value_Literal"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#InChI -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#InChI">
+        <rdfs:label xml:lang="en">InChI</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&sci;chemical_identifier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#InChIKey -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#InChIKey">
+        <rdfs:label xml:lang="en">InChI Key</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&sci;chemical_identifier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#Measurement -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#Measurement">
+        <rdfs:subClassOf rdf:resource="&gfo;Action"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#SMILES_string -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#SMILES_string">
+        <rdfs:label xml:lang="en">SMILES string</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&sci;chemical_identifier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#accellerating_the_rate_of_a_chemical_reaction -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#accellerating_the_rate_of_a_chemical_reaction">
+        <rdfs:label xml:lang="en">accellerating the rate of a chemical reaction</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#functioning"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#accepted_entity_role -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#accepted_entity_role">
+        <rdfs:label xml:lang="en">accepted entity role</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&gfo;Processual_role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#accepted_material_object_role -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#accepted_material_object_role">
+        <rdfs:label xml:lang="en">accepted material object role</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#accepted_entity_role"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gfo;role_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#accepting_a_material_object"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#accepting_a_material_object -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#accepting_a_material_object">
+        <rdfs:label xml:lang="en">accepting a material object</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#functioning"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&sci;has_role"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#accepted_material_object_role"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&sci;has_role"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#material_object_accepting_role"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&gfo;realizes"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#to_accept_a_material_object"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#functioning"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#accepting_a_proton -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#accepting_a_proton">
+        <rdfs:label xml:lang="en">accepting a proton</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#accepting_a_material_object"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&sci;has_role"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#accepted_entity_role"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="&sci;played_by"/>
+                                                <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#proton"/>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&sci;has_role"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#proton_acceptor_role"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="&sci;played_by"/>
+                                                <owl:someValuesFrom rdf:resource="&sci;chemical_material_object"/>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&gfo;realizes"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#to_accept_a_proton"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#accepting_a_material_object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#accepting_a_radical -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#accepting_a_radical">
+        <rdfs:label xml:lang="en">accepting a radical</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#accepting_a_material_object"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&sci;has_role"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#accepted_material_object_role"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="&sci;played_by"/>
+                                                <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#radical"/>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&sci;has_role"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#radical_acceptor_role"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="&sci;played_by"/>
+                                                <owl:someValuesFrom rdf:resource="&sci;chemical_material_object"/>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&gfo;realizes"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#to_accept_a_radical"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#accepting_a_material_object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#accepting_a_valence_electron -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#accepting_a_valence_electron">
+        <rdfs:label xml:lang="en">accepting a valence electron</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#accepting_a_material_object"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&sci;has_role"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#accepted_material_object_role"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="&sci;played_by"/>
+                                                <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#valence_electron"/>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&sci;has_role"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#electron_acceptor_role"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="&sci;played_by"/>
+                                                <owl:someValuesFrom rdf:resource="&sci;chemical_material_object"/>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&gfo;realizes"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#to_accept_an_electron"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#accepting_an_electron"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#accepting_an_electron -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#accepting_an_electron">
+        <rdfs:label xml:lang="en">accepting an electron</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#accepting_a_material_object"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&sci;has_role"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#accepted_material_object_role"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="&sci;played_by"/>
+                                                <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#electron"/>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&sci;has_role"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#electron_acceptor_role"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="&sci;played_by"/>
+                                                <owl:someValuesFrom rdf:resource="&sci;chemical_material_object"/>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&gfo;realizes"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#to_accept_an_electron"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#accepting_a_material_object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#accepting_entity_role -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#accepting_entity_role">
+        <rdfs:label xml:lang="en">accepting entity role</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&gfo;Processual_role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#acid_molecule -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#acid_molecule">
+        <rdfs:label xml:lang="en">Acid molecule</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#bronsted_acid_molecule"/>
+                    <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#lewis_acid_molecule"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecule"/>
+        <owl:disjointWith rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#base_molecule"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#anion -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#anion">
+        <rdfs:label xml:lang="en">anion</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#atom"/>
+                            <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecule"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&sci;has_property"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#negative_electrical_charge"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&sci;has_property"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#negative_electrical_charge"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#ion"/>
+        <owl:disjointWith rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#cation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#atom -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#atom">
+        <rdfs:label xml:lang="en">atom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#physical_material_object"/>
+        <owl:disjointWith rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecule"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#atomic_radical -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#atomic_radical">
+        <rdfs:label xml:lang="en">atomic radical</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#atom"/>
+        <owl:disjointWith rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#radical_molecule"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#base_molecule -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#base_molecule">
+        <rdfs:label xml:lang="en">Base molecule</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#bronsted_base_molecule"/>
+                    <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#lewis_base_molecule"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecule"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#bond_formation_process -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#bond_formation_process">
+        <rdfs:label xml:lang="en">bond formation process</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&gfo;Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#bonded_atom -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#bonded_atom">
+        <rdfs:label xml:lang="en">bonded atom</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#atom"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&gfo;part_of"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecular_fragment"/>
+                                    <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecule"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&gfo;participates_in"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#bonding_process"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&gfo;plays_role"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#bonded_entity_role"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#atom"/>
+        <owl:disjointWith rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#free_atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#bonded_entity_role -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#bonded_entity_role">
+        <rdfs:label xml:lang="en">bonded entity role</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&gfo;Processual_role"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gfo;role_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#bonding_process"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#bonding_process -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#bonding_process">
+        <rdfs:label xml:lang="en">bonding</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&gfo;Process"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&sci;has_role"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#bonded_entity_role"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&gfo;Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#bronsted_acid_molecule -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#bronsted_acid_molecule">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecule"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&gfo;participates_in"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#donating_a_proton"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&gfo;plays_role"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#proton_donating_role"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#acid_molecule"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#bronsted_base_molecule -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#bronsted_base_molecule">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecule"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&gfo;participates_in"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#accepting_a_proton"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&gfo;plays_role"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#proton_acceptor_role"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#base_molecule"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#catalyst_molecule -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#catalyst_molecule">
+        <rdfs:label xml:lang="en">Catalyst molecule</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecule"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&gfo;participates_in"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#accellerating_the_rate_of_a_chemical_reaction"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&gfo;plays_role"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#catalyst_role"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecule"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#catalyst_role -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#catalyst_role">
+        <rdfs:label xml:lang="en">catalyst role</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&gfo;Processual_role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#cation -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#cation">
+        <rdfs:label xml:lang="en">cation</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#atom"/>
+                            <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecule"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&sci;has_property"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#positive_electrical_charge"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&sci;has_property"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#positive_electrical_charge"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#ion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#chemical_reaction -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#chemical_reaction">
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#reaction"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gfo;has_participant"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#atom"/>
+                                    <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecule"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&gfo;plays_role"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#product_role"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gfo;has_participant"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#atom"/>
+                                    <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecule"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&gfo;plays_role"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#reactant_role"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gfo;projects_to"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#chemical_reaction_time"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#chemical_reaction_time -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#chemical_reaction_time">
+        <rdfs:label xml:lang="en">chemical reaction time</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&gfo;Chronoid"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&gfo;has_left_time_boundary"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#chemical_reaction_time_left_boundary"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&gfo;has_right_time_boundary"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#chemical_reaction_time_right_boundary"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&gfo;projection_of"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#chemical_reaction"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&gfo;Chronoid"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#chemical_reaction_time_boundary -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#chemical_reaction_time_boundary">
+        <rdfs:label xml:lang="en">chemical reaction time boundary</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&gfo;Time_boundary"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#chemical_reaction_time_left_boundary -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#chemical_reaction_time_left_boundary">
+        <rdfs:label xml:lang="en">chemical reaction left time boundary</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#chemical_reaction_time_boundary"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&gfo;left_boundary_of"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#chemical_reaction_time"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#chemical_reaction_time_boundary"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#chemical_reaction_time_right_boundary -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#chemical_reaction_time_right_boundary">
+        <rdfs:label xml:lang="en">chemical reaction right time boundary</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#chemical_reaction_time_boundary"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&gfo;right_boundary_of"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#chemical_reaction_time"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#chemical_reaction_time_boundary"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#donating_a_material_object -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#donating_a_material_object">
+        <rdfs:label xml:lang="en">donating a material object</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#functioning"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#donating_a_proton -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#donating_a_proton">
+        <rdfs:label xml:lang="en">donating a proton</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#donating_a_material_object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#donating_a_valence_electron -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#donating_a_valence_electron">
+        <rdfs:label xml:lang="en">donting a valence electron</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#donating_an_electron"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#donating_an_electron -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#donating_an_electron">
+        <rdfs:label xml:lang="en">donating an electron</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#donating_a_material_object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#donating_entity_role -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#donating_entity_role">
+        <rdfs:label xml:lang="en">donating entity role</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&gfo;Processual_role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#electrical_charge -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#electrical_charge">
+        <rdfs:label xml:lang="en">electrical charge</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#negative_electrical_charge"/>
+                    <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#positive_electrical_charge"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&gfo;Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#electron -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#electron">
+        <rdfs:label xml:lang="en">electron</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#subatomic_particle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#electron_acceptor_molecule -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#electron_acceptor_molecule">
+        <rdfs:label xml:lang="en">Electron acceptor molecule</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecule"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&gfo;participates_in"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#accepting_an_electron"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&gfo;plays_role"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#electron_acceptor_role"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecule"/>
+        <owl:disjointWith rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#electron_donor_molecule"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#electron_acceptor_role -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#electron_acceptor_role">
+        <rdfs:label xml:lang="en">electron acceptor role</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#material_object_accepting_role"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gfo;role_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#accepting_an_electron"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#electron_donating_role -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#electron_donating_role">
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#material_object_donating_entity_role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#electron_donor_molecule -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#electron_donor_molecule">
+        <rdfs:label xml:lang="en">Electron donor molecule</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecule"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&gfo;participates_in"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#donating_an_electron"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&gfo;plays_role"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#electron_donating_role"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecule"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#forming_a_radical -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#forming_a_radical">
+        <rdfs:label xml:lang="en">forming a radical</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#functioning"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gfo;realizes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#to_form_a_radical"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#free_atom -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#free_atom">
+        <rdfs:label xml:lang="en">free atom</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#atom"/>
+                    <owl:Class>
+                        <owl:complementOf>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&gfo;part_of"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecular_fragment"/>
+                                            <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecule"/>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                        </owl:complementOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:complementOf>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&gfo;participates_in"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#bonding_process"/>
+                            </owl:Restriction>
+                        </owl:complementOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:complementOf>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&gfo;plays_role"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#bonded_entity_role"/>
+                            </owl:Restriction>
+                        </owl:complementOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#functional_group -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#functional_group">
+        <rdfs:label xml:lang="en">Functional Group</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecular_fragment"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&gfo;part_of"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecule"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecular_fragment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#functioning -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#functioning">
+        <rdfs:label xml:lang="en">functioning</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gfo;realizes"/>
+                <owl:someValuesFrom rdf:resource="&gfo;Function"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&gfo;Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#ion -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#ion">
+        <rdfs:label xml:lang="en">ion</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#anion"/>
+                            <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#cation"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#atom"/>
+                            <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecule"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&sci;chemical_material_object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#lewis_acid_molecule -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#lewis_acid_molecule">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecule"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&gfo;participates_in"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#accepting_a_valence_electron"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&gfo;plays_role"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#electron_acceptor_role"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#acid_molecule"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#lewis_base_molecule -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#lewis_base_molecule">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecule"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&gfo;participates_in"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#donating_a_valence_electron"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&gfo;plays_role"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#electron_donating_role"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#base_molecule"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#lone_pair -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#lone_pair">
+        <rdfs:label xml:lang="en">lone pair</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&gfo;Set"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&gfo;has_member"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#valence_electron"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&gfo;has_member"/>
+                        <owl:onClass rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#valence_electron"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&gfo;Set"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#material_object_accepting_role -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#material_object_accepting_role">
+        <rdfs:label xml:lang="en">material object accepting role</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#accepting_entity_role"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gfo;role_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#accepting_a_material_object"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#material_object_donating_entity_role -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#material_object_donating_entity_role">
+        <rdfs:label xml:lang="en">material object donating entity role</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#donating_entity_role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#mixture -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#mixture">
+        <rdfs:label xml:lang="en">mixture</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&gfo;Material_object"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#has_component"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#pure_substance"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#has_component"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#pure_substance"/>
+                                    <owl:Class>
+                                        <owl:complementOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecule"/>
+                                    </owl:Class>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#substance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecular_fragment -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecular_fragment">
+        <rdfs:label xml:lang="en">molecular fragment</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&sci;chemical_material_object"/>
+        <owl:disjointWith rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecule"/>
+        <owl:disjointWith rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#subatomic_particle"/>
+        <owl:disjointWith rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#substance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecule -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecule">
+        <rdfs:label xml:lang="en">molecule</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&sci;chemical_material_object"/>
+        <owl:disjointWith rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#subatomic_particle"/>
+        <owl:disjointWith rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#substance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#negative_electrical_charge -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#negative_electrical_charge">
+        <rdfs:label xml:lang="en">negative electrical charge</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#electrical_charge"/>
+        <owl:disjointWith rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#positive_electrical_charge"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#physical_material_object -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#physical_material_object">
+        <rdfs:label xml:lang="en">physical material object</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&gfo;Material_object"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&gfo;on_level"/>
+                        <owl:someValuesFrom rdf:resource="&gfo;Physical_level"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&gfo;Material_object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#positive_electrical_charge -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#positive_electrical_charge">
+        <rdfs:label xml:lang="en">positive electrical charge</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#electrical_charge"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#product_molecule -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#product_molecule">
+        <rdfs:label xml:lang="en">Product molecule</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecule"/>
+        <rdfs:comment xml:lang="en">A molecule that is formed during a chemical reaction.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#product_role -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#product_role">
+        <rdfs:label xml:lang="en">product role</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&gfo;Processual_role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#proton -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#proton">
+        <rdfs:label xml:lang="en">proton</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#physical_material_object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#proton_acceptor_role -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#proton_acceptor_role">
+        <rdfs:label xml:lang="en">proton acceptor role</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#material_object_accepting_role"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gfo;role_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#accepting_a_proton"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#proton_donating_role -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#proton_donating_role">
+        <rdfs:label xml:lang="en">proton donating role</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#material_object_donating_entity_role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#pure_substance -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#pure_substance">
+        <rdfs:label xml:lang="en">pure substance</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&gfo;Material_object"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#has_granular_part"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecule"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#has_granular_part"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecule"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#substance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#radical -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#radical">
+        <rdfs:label xml:lang="en">radical</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#atomic_radical"/>
+                    <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#radical_molecule"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&sci;chemical_material_object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#radical_acceptor_role -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#radical_acceptor_role">
+        <rdfs:label xml:lang="en">radical acceptor role</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#material_object_accepting_role"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gfo;role_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#accepting_a_radical"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#radical_donating_role -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#radical_donating_role">
+        <rdfs:label xml:lang="en">radical donating role</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#material_object_donating_entity_role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#radical_molecule -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#radical_molecule">
+        <rdfs:label xml:lang="en">Radical molecule</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecule"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&gfo;has_proper_part"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#unpaired_electron"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecule"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#reactant_molecule -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#reactant_molecule">
+        <rdfs:label xml:lang="en">Reactant molecule</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecule"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#reactant_role -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#reactant_role">
+        <rdfs:label xml:lang="en">reactant role</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&gfo;Processual_role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#reaction -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#reaction">
+        <rdfs:label xml:lang="en">reaction</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&gfo;Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#reaction_mechanism -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#reaction_mechanism">
+        <rdfs:label xml:lang="en">reaction mechanism</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&sci;model"/>
+        <definition xml:lang="en">A detailed description of the process leading from the reactants to the products of a reaction, including a characterization as complete as possible of the composition, structure, energy and other properties of reaction intermediates, products and transition states. An acceptable mechanism of a specified reaction (and there may be a number of such alternative mechanisms not excluded by the evidence) must be consistent with the reaction stoichiometry, the rate law and with all other available experimental data, such as the stereochemical course of the reaction. Inferences concerning the electronic motions which dynamically interconvert successive species along the reaction path (as represented by curved arrows, for example) are often included in the description of a mechanism. It should be noted that for many reactions all this information is not available and the suggested mechanism is based on incomplete experimental data. It is not appropriate to use the term mechanism to describe a statement of the probable sequence in a set of stepwise reactions. That should be referred to as a reaction sequence, and not a mechanism.
+See also: Gibbs energy diagram. Source: PAC, 1994, 66, 1077 (Glossary of terms used in physical organic chemistry (IUPAC Recommendations 1994)) on page 1138</definition>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#reagent_role -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#reagent_role">
+        <rdfs:label xml:lang="en">reagent role</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&gfo;Processual_role"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#set_of_molecules -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#set_of_molecules">
+        <rdfs:label xml:lang="en">set of molecules</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&gfo;Set"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&gfo;has_member"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecule"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&gfo;has_member"/>
+                        <owl:allValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecule"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&gfo;Set"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#solute -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#solute">
+        <rdfs:label xml:lang="en">solute</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&gfo;Material_object"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#has_granular_part"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecule"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&gfo;participates_in"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#solvation"/>
+                                    </owl:Restriction>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&gfo;plays_role"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#solute_role"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#substance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#solute_molecule -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#solute_molecule">
+        <rdfs:label xml:lang="en">Solute molecule</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecule"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&gfo;participates_in"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#solvation"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&gfo;plays_role"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#solute_role"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecule"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#solute_role -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#solute_role">
+        <rdfs:label xml:lang="en">solute role</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&gfo;Processual_role"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gfo;role_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#solvation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#solution -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#solution">
+        <rdfs:label xml:lang="en">solution</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&gfo;Material_object"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#has_component"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#solute"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#has_component"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#solvent"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#has_component"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#solvent"/>
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#solute"/>
+                                            <owl:Class>
+                                                <owl:complementOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecule"/>
+                                            </owl:Class>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#substance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#solvation -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#solvation">
+        <rdfs:label xml:lang="en">solvation</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#functioning"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&sci;has_role"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#solute_role"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&sci;has_role"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#solvent_role"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#functioning"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#solvent -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#solvent">
+        <rdfs:label xml:lang="en">solvent</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&gfo;Material_object"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#has_granular_part"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecule"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&gfo;participates_in"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#solvation"/>
+                                    </owl:Restriction>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&gfo;plays_role"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#solvent_role"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#substance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#solvent_molecule -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#solvent_molecule">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecule"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&gfo;participates_in"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#solvation"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&gfo;plays_role"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#solvent_role"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecule"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#solvent_role -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#solvent_role">
+        <rdfs:label xml:lang="en">solvent role</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&gfo;Processual_role"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gfo;role_of"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#solvation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#standard_InChI -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#standard_InChI">
+        <rdfs:label xml:lang="en">standard InChI</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#InChI"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#standard_InChIKey -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#standard_InChIKey">
+        <rdfs:label xml:lang="en">standard InChI Key</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#InChIKey"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#subatomic_particle -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#subatomic_particle">
+        <rdfs:label xml:lang="en">subatmic particle</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#physical_material_object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#substance -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#substance">
+        <rdfs:label xml:lang="en">substance</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&gfo;Material_object"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#has_granular_part"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecule"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&sci;chemical_material_object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#to_accellerate_the_rate_of_a_chemical_reaction -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#to_accellerate_the_rate_of_a_chemical_reaction">
+        <rdfs:label xml:lang="en">To accellerate the rate of a chemical reaction</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&gfo;Function"/>
+        <definition xml:lang="en">A function, which has the (teleological) goal of accellerating the rate of a chemical reaction process. For the function to be realised, several chemical entities need to be present: these are one or more molecules playing the roles of reactants and another molecular entity or substance playing the role of a catalyst, which realises the function.</definition>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#to_accept_a_material_object -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#to_accept_a_material_object">
+        <rdfs:label xml:lang="en">To accept a material object</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&gfo;Function"/>
+        <definition xml:lang="en">A function, which denotes the teleological goal of accepting a material entity.</definition>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#to_accept_a_proton -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#to_accept_a_proton">
+        <rdfs:label xml:lang="en">To accept a proton</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#to_accept_a_material_object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#to_accept_a_radical -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#to_accept_a_radical">
+        <rdfs:label xml:lang="en">To accept a radical</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#to_accept_a_material_object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#to_accept_an_electron -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#to_accept_an_electron">
+        <rdfs:label xml:lang="en">To accept an electron</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#to_accept_a_material_object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#to_cause_the_loss_of_an_amine_funtional_group -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#to_cause_the_loss_of_an_amine_funtional_group">
+        <rdfs:label xml:lang="en">To cause the loss of an amine functional group</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&gfo;Function"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#to_donate_a_material_object -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#to_donate_a_material_object">
+        <rdfs:label xml:lang="en">To donate a material object</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&gfo;Function"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#to_donate_a_proton -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#to_donate_a_proton">
+        <rdfs:label xml:lang="en">To donate a proton</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#to_donate_a_material_object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#to_donate_an_electron -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#to_donate_an_electron">
+        <rdfs:label xml:lang="en">To donate an electron</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#to_donate_a_material_object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#to_form_a_radical -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#to_form_a_radical">
+        <rdfs:label xml:lang="en">To form a radical</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&gfo;Function"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#to_inhibit_a_chemical_reaction -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#to_inhibit_a_chemical_reaction">
+        <rdfs:label xml:lang="en">To inhibit a chemical reaction</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&gfo;Function"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#to_inhibit_oxidation -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#to_inhibit_oxidation">
+        <rdfs:label xml:lang="en">To inhibit oxidation</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#to_inhibit_a_chemical_reaction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#to_lower_surface_tension -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#to_lower_surface_tension">
+        <rdfs:label xml:lang="en">To lower surface tension</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&gfo;Function"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#to_resist_pH_change -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#to_resist_pH_change">
+        <rdfs:label xml:lang="en">To resist pH change</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&gfo;Function"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#to_solvate_a_material_object -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#to_solvate_a_material_object">
+        <rdfs:label xml:lang="en">To solvate a material object</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&gfo;Function"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#transition_metal_atom -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#transition_metal_atom">
+        <rdfs:label xml:lang="en">transition metal atom</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#atom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#transition_metal_molecule -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#transition_metal_molecule">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecule"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&gfo;has_proper_part"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#transition_metal_atom"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#molecule"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#unit_symbol -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#unit_symbol">
+        <rdfs:subClassOf rdf:resource="&gfo;Symbol"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#unpaired_electron -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#unpaired_electron">
+        <rdfs:label xml:lang="en">unpaired electron</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#electron"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#valence_electron -->
+
+    <owl:Class rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#valence_electron">
+        <rdfs:label xml:lang="en">valence electron</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#electron"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&gfo;participates_in"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#bond_formation_process"/>
+                                    <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#bonding_process"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&gfo;proper_part_of"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#atom"/>
+                                    <rdf:Description rdf:about="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#bonded_atom"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/scimantica/chemaxiom/owl/chemdomain.owl#electron"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/owl/science.owl#chemical_identifier -->
+
+    <owl:Class rdf:about="&sci;chemical_identifier"/>
+    
+
+
+    <!-- http://purl.org/scimantica/owl/science.owl#chemical_material_object -->
+
+    <owl:Class rdf:about="&sci;chemical_material_object">
+        <rdfs:label xml:lang="en">chemical material object</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&gfo;Material_object"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&sci;has_identifier"/>
+                <owl:someValuesFrom rdf:resource="&sci;chemical_identifier"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/owl/science.owl#information_content_entity -->
+
+    <owl:Class rdf:about="&sci;information_content_entity">
+        <rdfs:subClassOf rdf:resource="&gfo;Abstract"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/scimantica/owl/science.owl#model -->
+
+    <owl:Class rdf:about="&sci;model">
+        <rdfs:subClassOf rdf:resource="&sci;information_content_entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.onto-med.de/ontologies/gfo.owl#Concept -->
+
+    <owl:Class rdf:about="&gfo;Concept"/>
+    
+
+
+    <!-- http://www.onto-med.de/ontologies/gfo.owl#Material_object -->
+
+    <owl:Class rdf:about="&gfo;Material_object"/>
+    
+
+
+    <!-- http://www.onto-med.de/ontologies/gfo.owl#Process -->
+
+    <owl:Class rdf:about="&gfo;Process"/>
+    
+
+
+    <!-- http://www.onto-med.de/ontologies/gfo.owl#Processual_role -->
+
+    <owl:Class rdf:about="&gfo;Processual_role"/>
+    
+
+
+    <!-- http://www.onto-med.de/ontologies/gfo.owl#Property -->
+
+    <owl:Class rdf:about="&gfo;Property"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="&gfo;Category">
+        <chebixref></chebixref>
+    </rdf:Description>
+    <rdf:Description rdf:about="&sci;homo_sapiens">
+        <rdfs:label xml:lang="de">Mensch</rdfs:label>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+
